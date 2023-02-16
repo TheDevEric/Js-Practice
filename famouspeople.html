@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celeb Images</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .row{
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+    }
+
+    .img{
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+    }
+
+    
+</style>
+<body>
+
+</body>
+<script>
+
+const imgArr = ["photo/lovelace.png", "photo/turing.png", "photo/babbage.png", "photo/job.png", "photo/gates.png", "photo/musk.png"];
+const divColumn = document.body.appendChild(document.createElement('div'));
+const divRow = document.body.appendChild(document.createElement('div'));
+const divRow2 = document.body.appendChild(document.createElement('div'));
+const imgDiv0 = document.body.appendChild(document.createElement('div'));
+const imgDiv1 = document.body.appendChild(document.createElement('div'));
+const imgDiv2 = document.body.appendChild(document.createElement('div'));
+const imgDiv3 = document.body.appendChild(document.createElement('div'));
+const imgDiv4 = document.body.appendChild(document.createElement('div'));
+const imgDiv5 = document.body.appendChild(document.createElement('div'));
+
+divColumn.className = "container";
+divColumn.appendChild(divRow);
+divColumn.appendChild(divRow2);
+divRow.className = "row";
+divRow2.className = "row";
+divRow.appendChild(imgDiv0);
+divRow.appendChild(imgDiv1);
+divRow.appendChild(imgDiv2);
+imgDiv0.className = "img";
+imgDiv1.className = "img";
+imgDiv2.className = "img";
+divRow2.appendChild(imgDiv3);
+divRow2.appendChild(imgDiv4);
+divRow2.appendChild(imgDiv5);
+imgDiv3.className = "img";
+imgDiv4.className = "img";
+imgDiv5.className = "img";
+
+const imgDiv = document.querySelectorAll("div div.img");
+
+
+for(let i = 0; imgArr.length; i++){
+    imgDiv[i].style.backgroundImage = `url(${imgArr[i]})`;
+}
+
+</script>
+</html>
